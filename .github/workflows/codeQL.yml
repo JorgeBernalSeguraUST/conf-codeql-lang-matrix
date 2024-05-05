@@ -20,11 +20,10 @@ jobs:
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
-
-  analyze:
-    name: Analyze
-    uses: github/codeql-action/analyze@v1
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['javascript-typescript', 'python']
+        
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1
+        strategy:
+          fail-fast: false
+          matrix:
+            language: ['javascript-typescript', 'python']
